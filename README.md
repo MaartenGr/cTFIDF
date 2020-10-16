@@ -246,7 +246,7 @@ However, this allows us to start looking at TF-IDF from a class-based perspectiv
 Then, instead of applying TF-IDF to the newly created long documents, we have to take into account that TF-IDF will take the number of classes instead of the number of documents since we merged documents. 
 All these changes to TF-IDF results in the following formula: 
 
-<img src="images/ctfidf.png" width="35%" height="35%" align="right" />
+<img src="images/ctfidf.png" width="50%" height="50%" align="center" />
 
 Where the frequency of each word `t` is extracted for each class `i` and divided by the total number of words `w`. 
 This action can be seen as a form of regularization of frequent words in the class. 
