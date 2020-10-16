@@ -23,9 +23,9 @@ Corresponding TowardsDataScience post can be found [here](XXX).
    2. [Getting Started](#gettingstarted)    
         2.1. [Requirements](#installation)    
         2.2. [Basic Usage](#usage)   
-        2.3. [Informative Words per Class](#informative)
-        2.4. [Class Reduction](#reduction)
-        2.5. [Semi-supervised Modeling](#modeling)         
+        2.3. [Informative Words per Class](#informative)  
+        2.4. [Class Reduction](#reduction)  
+        2.5. [Semi-supervised Modeling](#modeling)           
 <!--te-->
  
 
