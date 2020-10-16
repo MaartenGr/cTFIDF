@@ -25,7 +25,8 @@ Corresponding TowardsDataScience post can be found [here](XXX).
         2.2. [Basic Usage](#usage)   
         2.3. [Informative Words per Class](#informative)  
         2.4. [Class Reduction](#reduction)  
-        2.5. [Semi-supervised Modeling](#modeling)           
+        2.5. [Semi-supervised Modeling](#modeling)
+   3. [c-TF-IDF](#ctfidf)           
 <!--te-->
  
 
@@ -226,3 +227,27 @@ comp.sys.ibm.pc.hardware       0.54      0.53      0.54       392
 
 Although we can see that the results are nothing to write home about with an accuracy of roughly **50**%… The accuracy is much better than randomly guessing the class which is **5**%. 
 Without any complex predictive model, we managed to get decent accuracy with a fast and relatively simple model. We did not even preprocess the data!
+
+
+<a name="ctfidf"/></a>
+## 3. c-TF-IDF
+[Back to ToC](#toc)
+
+The goal of the class-based TF-IDF is to supply all documents within a single class with the same class vector. 
+In order to do so, we have to start looking at TF-IDF from a class-based point of view instead of individual documents.
+
+If documents are not individuals, but part of a larger collective, then it might be interesting to actually 
+regard them as such by joining all documents in a class together.
+
+The result would be a very long document that is by itself not actually readable. Imagine reading a document consisting of 10 000 pages! 
+
+However, this allows us to start looking at TF-IDF from a class-based perspective.
+
+Then, instead of applying TF-IDF to the newly created long documents, we have to take into account that TF-IDF will take the number of classes instead of the number of documents since we merged documents. 
+All these changes to TF-IDF results in the following formula: 
+
+<img src="images/ctfidf.png" width="35%" height="35%" align="right" />
+
+Where the frequency of each word `t` is extracted for each class `i` and divided by the total number of words `w`. 
+This action can be seen as a form of regularization of frequent words in the class. 
+Next, the total, unjoined, number of documents `m` is divided by the total frequency of word `t` across all classes `n`.  
