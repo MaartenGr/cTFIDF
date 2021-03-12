@@ -31,7 +31,8 @@ class CTFIDFVectorizer(TfidfTransformer):
         # Calculate IDF scores
         _, n_features = X.shape
         df = np.squeeze(np.asarray(X.sum(axis=0)))
-        idf = np.log(n_samples / df)
+        avg_nr_samples = int(X.sum(axis=1).mean())
+        idf = np.log(avg_nr_samples / df)
         self._idf_diag = sp.diags(idf, offsets=0,
                                   shape=(n_features, n_features),
                                   format='csr',
